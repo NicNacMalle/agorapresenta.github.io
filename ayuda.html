@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Pedir Ayuda - Ágora Presenta</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>Pedir Ayuda - Ágora Presenta</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header>
@@ -12,27 +12,32 @@
         <a href="index.html">Inicio</a>
         <a href="presentaciones.html">Presentaciones</a>
         <a href="plantillas.html">Plantillas</a>
-        <a href="herramientas.html">Herramientas Escolares</a>
-        <a href="ayuda.html">Pedir Ayuda</a>
+        <a href="herramientas.html">Herramientas</a>
+        <a href="ayuda.html" class="active">Pedir Ayuda</a>
     </nav>
 </header>
 
 <div class="container">
     <h2>Pedir ayuda</h2>
-    <p>Si necesitas asistencia con un proyecto o presentación, puedes enviarnos un mensaje usando este formulario:</p>
+    <p>Si necesitas asistencia con un proyecto o presentación, envíanos un mensaje usando este formulario:</p>
 
     <form action="https://formspree.io/f/{your-form-id}" method="POST">
-        <label for="name">Nombre:</label><br>
-        <input type="text" id="name" name="name" required><br><br>
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" name="name" required>
 
-        <label for="email">Correo electrónico:</label><br>
-        <input type="email" id="email" name="email" required><br><br>
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" required>
 
-        <label for="message">Mensaje:</label><br>
-        <textarea id="message" name="message" rows="5" required></textarea><br><br>
+        <label for="message">Mensaje:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
 
         <button type="submit">Enviar</button>
     </form>
+    <p>Recibirás respuesta en 24 horas.</p>
 </div>
+
+<footer>
+    © 2026 Ágora Presenta
+</footer>
 </body>
 </html>
