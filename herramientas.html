@@ -4,6 +4,35 @@
 <meta charset="UTF-8">
 <title>Herramientas Escolares - Ágora Presenta</title>
 <link rel="stylesheet" href="style.css">
+<style>
+/* Interactive dropdown styles */
+.card {
+    cursor: pointer;
+}
+.card-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+    padding: 0 15px;
+}
+.card-content.open {
+    padding: 15px;
+    max-height: 1000px; /* large enough for content */
+}
+.card img {
+    max-width: 100%;
+    border-radius: 15px;
+    margin: 10px 0;
+}
+.card h3::after {
+    content: " ▼";
+    float: right;
+    font-size: 0.9em;
+}
+.card.active h3::after {
+    content: " ▲";
+}
+</style>
 </head>
 <body>
 <header>
@@ -18,39 +47,73 @@
 </header>
 
 <div class="container">
-    <h2>💻 Herramientas para tus proyectos</h2>
-    <p>Aprende a usar estas herramientas y haz tus trabajos más rápido y bonito:</p>
+    <h2>💻 Tutoriales interactivos de herramientas</h2>
+    <p>Haz clic en cada herramienta para ver la guía paso a paso con imágenes:</p>
 
-    <div class="card">📝
-        <h3>Google Slides</h3>
-        <ul>
-            <li>Crear presentaciones rápidas y bonitas.</li>
-            <li>Colaborar en tiempo real con compañeros.</li>
-            <li>Exportar en PDF o PPTX fácilmente.</li>
-        </ul>
+    <!-- Google Slides -->
+    <div class="card">
+        <h3>📝 Google Slides</h3>
+        <div class="card-content">
+            <ol>
+                <li>Abre <a href="https://slides.google.com" target="_blank">Google Slides</a> y crea una nueva presentación.</li>
+                <li>Elige una plantilla o fondo simple.</li>
+                <li>Agrega títulos y subtítulos a tus diapositivas.</li>
+                <li>Inserta imágenes: <em>Insertar → Imagen → Subir desde computadora</em>.</li>
+                <li>Usa animaciones con moderación: <em>Transición → Animaciones</em>.</li>
+            </ol>
+            <img src="https://www.gstatic.com/images/branding/product/1x/slides_48dp.png" alt="Google Slides ejemplo">
+        </div>
     </div>
 
-    <div class="card">📄
-        <h3>Google Docs</h3>
-        <ul>
-            <li>Trabaja en documentos con tu grupo sin perder formato.</li>
-            <li>Usa comentarios y sugerencias para mejorar tu trabajo.</li>
-            <li>Exporta a PDF o Word rápidamente.</li>
-        </ul>
+    <!-- Google Docs -->
+    <div class="card">
+        <h3>📄 Google Docs</h3>
+        <div class="card-content">
+            <ol>
+                <li>Abre <a href="https://docs.google.com" target="_blank">Google Docs</a> y crea un documento nuevo.</li>
+                <li>Agrega título y subtítulos usando el menú de formato.</li>
+                <li>Inserta imágenes o gráficos: <em>Insertar → Imagen</em>.</li>
+                <li>Usa comentarios y sugerencias para colaboración: <em>Archivo → Compartir → Configurar permisos</em>.</li>
+                <li>Descarga tu trabajo en PDF o Word: <em>Archivo → Descargar</em>.</li>
+            </ol>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Google_Docs_2020_Logo.svg" alt="Google Docs ejemplo">
+        </div>
     </div>
 
-    <div class="card">🎨
-        <h3>Canva</h3>
-        <ul>
-            <li>Editar plantillas de forma divertida y rápida.</li>
-            <li>Agregar imágenes, iconos y gráficos personalizados.</li>
-            <li>Descargar listo para presentaciones o imprimir.</li>
-        </ul>
+    <!-- Canva -->
+    <div class="card">
+        <h3>🎨 Canva</h3>
+        <div class="card-content">
+            <ol>
+                <li>Abre <a href="https://www.canva.com" target="_blank">Canva</a> y selecciona “Presentación”.</li>
+                <li>Elige una plantilla divertida y colorida.</li>
+                <li>Edita texto, cambia colores y agrega iconos o emojis.</li>
+                <li>Sube tus propias imágenes si quieres personalizar más.</li>
+                <li>Descarga tu presentación en PDF o PPTX para entregar o mostrar.</li>
+            </ol>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Canva_Logo.png" alt="Canva ejemplo">
+        </div>
     </div>
 </div>
 
 <footer>
     © 2026 Ágora Presenta
 </footer>
+
+<script>
+// Dropdown toggle
+const cards = document.querySelectorAll('.card');
+cards.forEach(card => {
+    card.addEventListener('click', () => {
+        card.classList.toggle('active');
+        const content = card.querySelector('.card-content');
+        if (content.classList.contains('open')) {
+            content.classList.remove('open');
+        } else {
+            content.classList.add('open');
+        }
+    });
+});
+</script>
 </body>
 </html>
